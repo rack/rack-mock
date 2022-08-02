@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 # Compatibility with existing file structure:
-require 'rack/mock_request'
+begin
+  require 'rack/mock_request'
+rescue LoadError
+  # Ignore.
+end
 
 require_relative 'mock/version'
 require_relative 'mock/request'
